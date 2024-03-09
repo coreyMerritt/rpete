@@ -39,7 +39,7 @@ for i in range(iterations):
     error_margin.append(int(delay - (secToMicro(pause))))
    
     #Let the user know how far along we are. 
-    print("Pass " + str(i))
+    print("Pass " + str(i+1))
  
 #Final result.
 print("Average error margin was " + str(microToMili(sum(error_margin) / iterations)) + "ms.")
