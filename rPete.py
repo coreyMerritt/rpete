@@ -1,3 +1,4 @@
 import pendulum
 
-print(pendulum.now())
+now = pendulum.now()
+print(now.microsecond)
