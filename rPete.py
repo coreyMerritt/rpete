@@ -27,7 +27,6 @@ print("Average error margin was " + str((sum(error_margin) / iterations) / 1000)
 '''
 
 #Debugging
-#Moved the delay into a proper variable. This will make further manipulation of our figure more readable as we move forward.
 timestamps.append(pendulum.now().microsecond)
 time.sleep(pause)
 timestamps.append(pendulum.now().microsecond)
@@ -42,4 +41,5 @@ if (timestamps[1] - timestamps[0] > 0):
 else: 
     delay = 1000000 + (timestamps[1] - timestamps[0])    #1000000 is the constant for microseconds in 1s.
 
-print(delay)
+#This is subtract the expected delay from our actual delay, leaving our proper error margin.
+print(int(delay - (1000000 * pause)))
