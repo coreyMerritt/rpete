@@ -27,15 +27,19 @@ print("Average error margin was " + str((sum(error_margin) / iterations) / 1000)
 '''
 
 #Debugging
-#Well I definitely solved this more with logic than math but a win is a win. You can now see that 
-#no matter how many times you run this, the output is relatively normalized.
+#Moved the delay into a proper variable. This will make further manipulation of our figure more readable as we move forward.
 timestamps.append(pendulum.now().microsecond)
 time.sleep(pause)
 timestamps.append(pendulum.now().microsecond)
 
 print(timestamps[0])
 print(timestamps[1])
+
+delay = 0
+
 if (timestamps[1] - timestamps[0] > 0):
-    print(timestamps[1] - timestamps[0])
+    delay = timestamps[1] - timestamps[0]
 else: 
-    print(1000000 + (timestamps[1] - timestamps[0]))    #1000000 is the constant for microseconds in 1s.
+    delay = 1000000 + (timestamps[1] - timestamps[0])    #1000000 is the constant for microseconds in 1s.
+
+print(delay)
