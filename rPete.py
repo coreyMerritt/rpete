@@ -27,8 +27,9 @@ print("Average error margin was " + str((sum(error_margin) / iterations) / 1000)
 '''
 
 #Debugging
-#Lets just check the math one step at a time. For starters I should move to storing only the microsecond values into the timestamps list, storing the
-#entire timestamp was just silly and can only hurt our error margin. These changes are also reflected above now.
+#Our first real problem can be displayed by running this code. The problem is that if timestamp #2 ticks up the seconds timer, the "microseconds" of timestamp #2 will actually be smaller
+#than in timestamp #1, we could add seconds into the mix as well but we'll just run into the same problem when seconds tick over 59, instead I'll be attempting to solve this by playing around
+#with a few formulas by intuition.
 timestamps.append(pendulum.now().microsecond)
 time.sleep(pause)
 timestamps.append(pendulum.now().microsecond)
