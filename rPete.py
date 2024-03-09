@@ -2,10 +2,18 @@ import pendulum
 import keyboard
 import time
 
-#Learning object behavior in pendulum. Pendulum interval objects have all the same elements as datetime
-#objects AND can convert minutes into seconds with minimal effort. This outputs "75" just as you'd hope.
+#Converts Seconds to Microseconds
+def secToMili(sec):
+    return sec * 1000
+
+
+#Converts Microseconds to Miliseconds
+def microToMili(micro):
+    return round(micro / 1000, 2)
+
+#Time is now converted to ms and this is clearly displayed to the user.
 one = pendulum.now()
-time.sleep(75.5)
+time.sleep(0.5)
 two = pendulum.now()
 three = (two - one)
-print (three.seconds)
+print (str(secToMili(three.seconds) + (microToMili(three.microseconds))) + "ms")
