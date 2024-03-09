@@ -15,7 +15,7 @@ def secToMicro(sec):
 
 #Converts Microseconds to Miliseconds
 def microToMili(micro):
-    return micro / 1000
+    return round(micro / 1000, 2)
 
 
 for i in range(iterations):                                                                                             
