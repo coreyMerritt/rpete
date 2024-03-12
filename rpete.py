@@ -1,15 +1,15 @@
 import os, sys, time, keyboard, pendulum, curses
 
 
-#Converts Seconds to Microseconds
+#Converts Seconds to Microseconds.
 def secToMili(sec):
     return sec * 1000
 
-#Converts Seconds to Microseconds
+#Converts Seconds to Microseconds.
 def secToMicro(sec):
     return sec * 1000000
 
-#Converts Microseconds to Miliseconds
+#Converts Microseconds to Miliseconds.
 def microToMili(micro):
     return round(micro / 1000, 2)
 
@@ -40,15 +40,24 @@ for current in range(key_count):
     timestamps.append(pendulum.now().microsecond)
 
 
+#Stops hiding the user's keystrokes.
+curses.endwin()
+
+
 delay = []
 
-#Appends normalized delay after handling negative values, 
+#Had to adjust the algorithm a lot to work in this context. It was probably a bad idea to borrow this
+#from my error margin program, noted for next time. It's not optimal yet but it does produce correct output.
+#Appends normalized delay after handling negative values.
 for i in range(1, len(timestamps) // 2, 1):
-    if (timestamps[i*2-1] - timestamps[i*2] > 0):
-        delay.append(timestamps[i*2-1] - timestamps[i*2])
+    if (timestamps[i*2] - timestamps[i*2-1] > 0):
+        delay.append(timestamps[i*2] - timestamps[i*2-1])
     else:
-        delay.append(secToMicro(1) + (timestamps[i*2-1] - timestamps[i*2]))
+        delay.append(secToMicro(1) + (timestamps[i*2] - timestamps[i*2-1]))
 
+#Debugging
+for x in delay:
+    print(str(x))
 
 
 
