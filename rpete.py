@@ -46,14 +46,13 @@ curses.endwin()
 
 delay = []
 
-#Had to adjust the algorithm a lot to work in this context. It was probably a bad idea to borrow this
-#from my error margin program, noted for next time. It's not optimal yet but it does produce correct output.
+
 #Appends normalized delay after handling negative values.
-for i in range(1, len(timestamps) // 2, 1):
-    if (timestamps[i*2] - timestamps[i*2-1] > 0):
-        delay.append(timestamps[i*2] - timestamps[i*2-1])
+for i in range(1, len(timestamps)):
+    if (timestamps[i] - timestamps[i-1] > 0):
+        delay.append(timestamps[i] - timestamps[i-1])
     else:
-        delay.append(secToMicro(1) + (timestamps[i*2] - timestamps[i*2-1]))
+        delay.append(secToMicro(1) + (timestamps[i] - timestamps[i-1]))
 
 #Debugging
 for x in delay:
