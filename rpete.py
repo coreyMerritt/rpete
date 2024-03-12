@@ -5,6 +5,9 @@ import os, sys, time, keyboard, pendulum, curses
 def secToMili(sec):
     return sec * 1000
 
+#Converts Seconds to Microseconds
+def secToMicro(sec):
+    return sec * 1000000
 
 #Converts Microseconds to Miliseconds
 def microToMili(micro):
@@ -22,6 +25,7 @@ key_count = int(input("How many keypresses would you like to test?\nA higher num
 timestamps = []
 
 
+
 #Prompts the user to traverse the for loop.
 print("Press and hold the Spacebar key when ready.\nDo not stop until the program proceeds.")
 
@@ -34,6 +38,18 @@ curses.initscr()
 for current in range(key_count):
     keyboard.wait('Space')
     timestamps.append(pendulum.now().microsecond)
+
+
+delay = []
+
+#Appends normalized delay after handling negative values, 
+for i in range(1, len(timestamps) // 2, 1):
+    if (timestamps[i*2-1] - timestamps[i*2] > 0):
+        delay.append(timestamps[i*2-1] - timestamps[i*2])
+    else:
+        delay.append(secToMicro(1) + (timestamps[i*2-1] - timestamps[i*2]))
+
+
 
 
 #Might reference later, will be removing this eventually.
