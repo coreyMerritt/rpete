@@ -17,9 +17,13 @@ if os.geteuid() != 0:
     sys.exit(1)
 
 #Gets user input regarding test scope.
-key_count = input("How many keypresses would you like to test?\nA higher number will take longer, but will yield a more precise output.\nEnter an integer value from 1-1000:")
+key_count = int(input("How many keypresses would you like to test?\nA higher number will take longer, but will yield a more precise output.\nEnter an integer value from 1-1000:"))
+timestamps = []
 
-
+#Collects timestamps correlating to delay between keypresses while holding a key.
+for current in range(key_count):
+    keyboard.wait('Space')
+    timestamps.append(pendulum.now().microsecond)
 
 
 
