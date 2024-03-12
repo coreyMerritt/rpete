@@ -26,11 +26,14 @@ timestamps = []
 print("Press and hold the Spacebar key when ready.\nDo not stop until the program proceeds.")
 
 
+#Hides keystrokes from the user for a cleaner look.
+curses.initscr()
+
+
 #Collects timestamps correlating to delay between keypresses while holding a key.
 for current in range(key_count):
     keyboard.wait('Space')
     timestamps.append(pendulum.now().microsecond)
-
 
 
 #Might reference later, will be removing this eventually.
