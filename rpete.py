@@ -1,5 +1,6 @@
 import os, sys, time, keyboard, pendulum, curses
 
+
 #Converts Seconds to Microseconds
 def secToMili(sec):
     return sec * 1000
@@ -10,7 +11,12 @@ def microToMili(micro):
     return round(micro / 1000, 2)
 
 
-#Lets just start at the beginning, seems sensible.
+#Demands that user runs with sudo, the Curses library seems to require root privileges.
+if os.geteuid() != 0:
+    print("This script requires superuser privileges. Please run it with sudo.")
+    sys.exit(1)
+
+#Gets user input regarding test scope.
 key_count = input("How many keypresses would you like to test?\nA higher number will take longer, but will yield a more precise output.\nEnter an integer value from 1-1000:")
 
 
