@@ -1,7 +1,4 @@
-import pendulum
-import keyboard
-import time
-import curses
+import os, sys, time, keyboard, pendulum, curses
 
 #Converts Seconds to Microseconds
 def secToMili(sec):
