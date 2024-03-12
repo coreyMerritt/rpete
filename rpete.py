@@ -47,7 +47,6 @@ curses.endwin()
 repeat_rate = []
 repeat_delay = 0
 
-
 #Appends normalized delay after handling negative values.
 for i in range(1, len(timestamps)):
     if i == 1:
@@ -61,12 +60,18 @@ for i in range(1, len(timestamps)):
         else:
             repeat_rate.append(secToMicro(1) + (timestamps[i] - timestamps[i-1]))
 
-#Debugging
+
+rr_total = 0
+
+#Calculates the average repeat rate from all values in the list.
 for x in repeat_rate:
-    print("Repeat Rate = " + str(x))
+    rr_total += x
+rr_avg = rr_total / len(repeat_rate)
 
-print("Repeat Delay = " + str(repeat_delay))
 
+#Displays the result to the user.
+print("Your repeat delay is: " + str(int(microToMili(repeat_delay))) + "ms")
+print("Your repeat rate is: " + str(int(microToMili(rr_avg))) + "ms")
 
 
 
