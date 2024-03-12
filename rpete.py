@@ -30,16 +30,24 @@ print("Press and hold the Spacebar key when ready.\nDo not stop until the progra
 
 
 #Hides keystrokes from the user for a cleaner look.
-curses.initscr()
+stdscr = curses.initscr()
 
 
 #Collects timestamps correlating to delay between keypresses while holding a key.
+last_ts = pendulum.now()
 for current in range(key_count):
     keyboard.wait('Space')
     timestamps.append(pendulum.now().microsecond)
+    if ((pendulum.now() - last_ts).seconds > 1):                        #Checks for user error.
+        print("You let go of the space key. Please try again.")
+        stdscr.clear()
+        curses.endwin()
+        sys.exit()
+    last_ts = pendulum.now()
 
 
 #Stops hiding the user's keystrokes.
+stdscr.clear()
 curses.endwin()
 
 
