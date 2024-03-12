@@ -44,19 +44,29 @@ for current in range(key_count):
 curses.endwin()
 
 
-delay = []
+repeat_rate = []
+repeat_delay = 0
 
 
 #Appends normalized delay after handling negative values.
 for i in range(1, len(timestamps)):
-    if (timestamps[i] - timestamps[i-1] > 0):
-        delay.append(timestamps[i] - timestamps[i-1])
+    if i == 1:
+        if (timestamps[i] - timestamps[i-1] > 0):
+            repeat_delay = (timestamps[i] - timestamps[i-1])
+        else:
+            repeat_delay = (secToMicro(1) + (timestamps[i] - timestamps[i-1]))
     else:
-        delay.append(secToMicro(1) + (timestamps[i] - timestamps[i-1]))
+        if (timestamps[i] - timestamps[i-1] > 0):
+            repeat_rate.append(timestamps[i] - timestamps[i-1])
+        else:
+            repeat_rate.append(secToMicro(1) + (timestamps[i] - timestamps[i-1]))
 
 #Debugging
-for x in delay:
-    print(str(x))
+for x in repeat_rate:
+    print("Repeat Rate = " + str(x))
+
+print("Repeat Delay = " + str(repeat_delay))
+
 
 
 
