@@ -14,19 +14,18 @@ def microToMili(micro):
     return round(micro / 1000, 2)
 
 
-#Demands that user runs with sudo, the Curses library seems to require root privileges.
+#Demands that user runs with sudo, the Curses library requires root privileges.
 if os.geteuid() != 0:
     print("This script requires superuser privileges. Please run it with sudo.")
     sys.exit(1)
 
 
 #Gets user input regarding test scope.
-key_count = int(input("How many keypresses would you like to test?\nA higher number will take longer, but will yield a more precise output.\nEnter an integer value from 1-1000:"))
+key_count = int(input("How many keypresses would you like to test?\nA higher number will take longer, but will yield a more precise output.\nEnter an integer value from 1-1000:\n"))
 timestamps = []
 
 
-
-#Prompts the user to traverse the for loop.
+#Prompts the user to hold a key to collect repeat rate/delay data.
 print("Press and hold the Spacebar key when ready.\nDo not stop until the program proceeds.")
 
 
@@ -72,15 +71,3 @@ rr_avg = rr_total / len(repeat_rate)
 #Displays the result to the user.
 print("Your repeat delay is: " + str(int(microToMili(repeat_delay))) + "ms")
 print("Your repeat rate is: " + str(int(microToMili(rr_avg))) + "ms")
-
-
-
-#Might reference later, will be removing this eventually.
-'''
-#Time is now converted to ms and this is clearly displayed to the user.
-one = pendulum.now()
-time.sleep(0.5)
-two = pendulum.now()
-three = (two - one)
-print (str(secToMili(three.seconds) + (microToMili(three.microseconds))) + "ms")
-'''
