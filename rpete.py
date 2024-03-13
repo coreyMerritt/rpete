@@ -59,7 +59,7 @@ def main(display):
     repeat_rate = []
     repeat_delay = 0
 
-    #Appends normalized delay after handling negative values.
+    #Appends the repeat delay/rate after handling negative values.
     for i in range(1, len(timestamps)):
         if i == 1:
             if (timestamps[i] - timestamps[i-1] > 0):
