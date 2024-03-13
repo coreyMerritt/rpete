@@ -29,14 +29,16 @@ def main(display):
     display.refresh()
     key_count = int(display.getstr().decode())
     
+
+    #Prompts the user to hold a key to collect repeat rate/delay data.
+    display.clear()
+    display.addstr("Press and hold the Spacebar key when ready. Do not release Spacebar until told to.\n")
+    display.refresh()
+
+    
     curses.noecho()
     while True:
         timestamps = []
-
-        #Prompts the user to hold a key to collect repeat rate/delay data.
-        display.clear()
-        display.addstr("Press and hold the Spacebar key when ready. Do not release Spacebar until told to.\n")
-        display.refresh()
     
         #Collects timestamps correlating to delay between keypresses while holding a key.
         first_pass = True
@@ -47,7 +49,7 @@ def main(display):
             timestamps.append(pendulum.now().microsecond)
             if ((pendulum.now() - last_ts).seconds > 1 and first_pass == False):                        #Checks for user error.
                 user_error = True
-                display.addstr("You let go of the space key. Please try again.")
+                display.addstr("\nYou released Spacebar. Please try again.\n")
                 display.refresh()
                 break
             first_pass = False
