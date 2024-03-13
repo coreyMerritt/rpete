@@ -24,7 +24,7 @@ def main(display):
     curses.echo()
     
     #Gets user input regarding test scope.
-    display.addstr("How many keystrokes would you like to test? (A higher # will take longer but will be more accurate.)\n")
+    display.addstr("How many keystrokes would you like to test? (A higher # will take longer, but will be more accurate)\n")
     display.addstr("\nEnter an integer value from 1-1000:\n")
     display.refresh()
     key_count = int(display.getstr().decode())
