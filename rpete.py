@@ -15,9 +15,10 @@ def microToMili(micro):
 
 
 #Demands that user runs with sudo, the Curses library requires root privileges.
-if os.geteuid() != 0:
-    print("This script requires superuser privileges. Please run it with sudo.")
-    sys.exit(1)
+if os.name == 'posix':   
+   if os.geteuid() != 0:
+        print("This script requires superuser privileges. Please run it with sudo.")
+        sys.exit(1)
 
 
 def main(display):
