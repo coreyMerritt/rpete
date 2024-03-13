@@ -1,4 +1,4 @@
-#This program tests the accuracy of the pendulum and time libraries and concludes that the error margin
+# This program tests the accuracy of the pendulum and time libraries and concludes that the error margin
 #is approximately 0.3ms to 1.3ms and seems highly dependant on the delay given to the sleep() function
 #inside the time library. This margin seems plenty small enough to use these libraries for rpete.
 import pendulum, time
