@@ -1,6 +1,6 @@
-# rpete
+# rPete
 
-rpete is a command line tool created to measure the repeat rate and repeat delay of your keyboard over multiple operating systems. The goal of rpete is to help users synchronize keyboard settings across various machines and operating systems.
+rPete is a command line tool created to measure the repeat rate and repeat delay of your keyboard over multiple operating systems. The goal of rPete is to help users synchronize keyboard settings across various machines and operating systems.
 
 ## Table of Contents
 
@@ -39,7 +39,7 @@ python3 rpete.py
 
 ## Additional Tools
 
-This repository also includes the error_margin tool used to check if the error margin of the Pendulum and Time libraries would be sufficient for the rpete project, this tool wasn't designed to be used by users but was left in the repo for anyone curious that wishes to use it. This tool can be run exactly the same way as rpete and requires no additional dependencies that aren't already demanded from rpete.
+This repository also includes the error_margin tool used to check if the error margin of the Pendulum and Time libraries would be sufficient for the rPete project, this tool wasn't designed to be used by users but was left in the repo for anyone curious that wishes to use it. This tool can be run exactly the same way as rPete and requires no additional dependencies that aren't already demanded from rPete.
 
 ## License
 
