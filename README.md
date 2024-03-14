@@ -11,11 +11,11 @@ rpete is a command line tool created to measure the repeat rate and repeat delay
 
 ## Installation
 
-1. Clone this repository:
+1. Clone this repository.
 ```bash
 git clone git@github.com:coreyMerritt/rpete
 ```
-2. Install necessary dependencies:
+2. Install necessary dependencies.
   - All users will need the libraries Keyboard and Pendulum:
   ```bash
   pip install keyboard
@@ -29,7 +29,7 @@ git clone git@github.com:coreyMerritt/rpete
 
 ## Usage
 
-1. Navigate to the directory that contains rpete.py and run the tool:
+1. Navigate to the directory that contains rpete.py and run the tool.
 ```bash
 python3 rpete.py
 ```
