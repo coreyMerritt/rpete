@@ -1,4 +1,4 @@
-import os, sys, keyboard, pendulum, curses
+import os, sys, pendulum, curses
 
 
 #Converts Seconds to Microseconds.
@@ -46,7 +46,7 @@ def main(display):
         user_error = False
         last_ts = pendulum.now()
         for current in range(key_count):
-            keyboard.wait('Space')
+            display.getch()
             timestamps.append(pendulum.now().microsecond)
             if ((pendulum.now() - last_ts).seconds > 1 and first_pass == False):                        #Checks for user error.
                 user_error = True
