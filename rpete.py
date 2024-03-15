@@ -90,7 +90,13 @@ def main(display):
     display.addstr("\nYour repeat rate is: " + str(int(microToMili(rr_avg))) + "ms\n")
     display.addstr("\nPress Enter to exit.")
     display.refresh()
-    keyboard.wait('Enter')
+
+
+    keystroke = 0
+    
+    #Persists the program until user presses Enter.
+    while keystroke != 10:
+        keystroke = display.getch()
 
 
 curses.wrapper(main)
