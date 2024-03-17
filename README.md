@@ -53,6 +53,7 @@ git clone git@github.com:coreyMerritt/rpete
 ### Usage
 
 1. Navigate to the directory that contains rpete.py and run the tool.
+
 ```bash
 python3 rpete.py
 ```
