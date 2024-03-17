@@ -37,7 +37,7 @@ git clone git@github.com:coreyMerritt/rpete
 
 2. Install necessary dependencies.
 
-	- All users will need the library Pendulum:
+	- All users will need the Pendulum library:
   	
 	```bash
   	pip install pendulum
