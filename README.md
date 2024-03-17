@@ -54,9 +54,9 @@ git clone git@github.com:coreyMerritt/rpete
 
 1. Navigate to the directory that contains rpete.py and run the tool.
 
-```bash
-python3 rpete.py
-```
+	```bash
+	python3 rpete.py
+	```
 
 	- (Linux users will be forced to run the tool with sudo due to dependencies requirements)
 
