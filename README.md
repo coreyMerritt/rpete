@@ -38,14 +38,17 @@ git clone git@github.com:coreyMerritt/rpete
 2. Install necessary dependencies.
 
 	- All users will need the library Pendulum:
-  ```bash
-  pip install pendulum
-  ```
+  	
+	```bash
+  	pip install pendulum
+  	```
+
 
 	- Windows users will also need the "windows-curses" library:
-  ```powershell  
-  pip install windows-curses
-  ```
+  
+ 	```powershell  
+  	pip install windows-curses
+  	```
 <br></br>
 ### Usage
 
