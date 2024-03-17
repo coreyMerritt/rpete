@@ -31,24 +31,25 @@ rPete is a command line tool created to measure the repeat rate and repeat delay
 ### Installation
 
 1. Clone this repository.
-```bash
-git clone git@github.com:coreyMerritt/rpete
-```
+
+	```bash
+	git clone git@github.com:coreyMerritt/rpete
+	```
 
 2. Install necessary dependencies.
 
 	- All users will need the Pendulum library:
   	
-	```bash
-  	pip install pendulum
-  	```
+		```bash
+  		pip install pendulum
+  		```
 
 
 	- Windows users will also need the "windows-curses" library:
   
- 	```powershell  
-  	pip install windows-curses
-  	```
+ 		```powershell  
+  		pip install windows-curses
+  		```
 <br></br>
 ### Usage
 
