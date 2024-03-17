@@ -56,7 +56,8 @@ git clone git@github.com:coreyMerritt/rpete
 ```bash
 python3 rpete.py
 ```
-	- (Please note that Linux users will be forced to run the tool with sudo due to dependencies requirements)
+
+	- (Linux users will be forced to run the tool with sudo due to dependencies requirements)
 
 2. Follow the on-screen instructions.
 
